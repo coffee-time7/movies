@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f3f3f3">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:singleSelection="true">
+
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="start"
+                android:contentDescription="@string/fire_image_description"
+                app:srcCompat="@drawable/ic_fire"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="12dp" />
+
+            <TextView
+                android:id="@+id/tvTopMovies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/top_movies"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnLogout"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="end"
+                android:backgroundTint="@android:color/transparent"
+                android:drawableEnd="@drawable/ic_signout"
+                android:paddingStart="0dp"
+                android:paddingEnd="20dp"
+                tools:layout_editor_absoluteX="323dp"
+                tools:layout_editor_absoluteY="4dp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <TextView
+            android:id="@+id/tvFilter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:text="@string/filter_movies_by"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="48dp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFilter">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btnTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:shadowRadius="0"
+                android:text="@string/title"
+                android:textAllCaps="false"
+                android:textColor="#1e1e1e"
+                android:textSize="18sp"
+                app:chipBackgroundColor="#e6e6e6"
+                app:chipIcon="@drawable/ic_az"
+                app:chipIconTint="#bbbec5"
+                app:layout_constraintEnd_toStartOf="@id/btnDate"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvFilter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btnDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/date"
+                android:textAllCaps="false"
+                android:textColor="#1e1e1e"
+                android:textSize="18sp"
+                app:chipBackgroundColor="#e6e6e6"
+                app:chipIcon="@drawable/ic_calendar"
+                app:chipIconTint="#bbbec5"
+                app:layout_constraintEnd_toStartOf="@id/btnLikes"
+                app:layout_constraintStart_toEndOf="@id/btnTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvFilter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btnLikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/likes"
+                android:textAllCaps="false"
+                android:textColor="#1e1e1e"
+                android:textSize="18sp"
+                app:chipBackgroundColor="#e6e6e6"
+                app:chipIcon="@drawable/ic_heart_outline"
+                app:chipIconTint="#bbbec5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnDate"
+                app:layout_constraintTop_toBottomOf="@+id/tvFilter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btnFav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/my_favourites_only"
+                android:textAllCaps="false"
+                android:textColor="#1e1e1e"
+                android:textSize="18sp"
+                app:chipBackgroundColor="#e6e6e6"
+                app:chipIcon="@drawable/ic_heart_fill_favourites"
+                app:chipIconTint="#bbbec5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/btnLikes"
+                app:layout_constraintTop_toBottomOf="@+id/tvFilter" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="48dp"
+            android:background="#c3c4c8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chip_group" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

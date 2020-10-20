@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomEditText">
+        <attr name="showErrorText" format="boolean"/>
+        <attr name="state" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="correct" value="1"/>
+            <enum name="error" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview_id"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:backgroundTint="#FFF"
+    android:clickable="true"
+    android:focusable="true"
+    cardview:cardCornerRadius="4dp">
+
+    <LinearLayout
+        android:id="@+id/llcardview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/movie_img_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="#2d2d2d"
+            android:contentDescription="@string/cv_image_image_description"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/movie_title_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="top|start"
+            android:text="@string/movie_title"
+            android:textColor="#2d2d2d"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/movie_release_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="top|start"
+            android:text="@string/_2020_05_05"
+            android:textColor="#2d2d2d"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/cbCardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:button="@drawable/ic_heart_outline"
+            android:gravity="center|start"
+            android:text="@string/_12345" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
